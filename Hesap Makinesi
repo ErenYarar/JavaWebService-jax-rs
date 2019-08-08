@@ -7,7 +7,7 @@ import javax.ws.rs.*;
 @ApplicationPath("/resources")
 public class HesapMakinesi {
 
-//http://localhost:8080/RestExample/resources/hesap/add/15/5
+//http://localhost:8080/RestExample/resources/hesap/add/15/5 -> Girilicek Adres...
 	
    @GET
 	 @Path("/add/{a}/{b}")
