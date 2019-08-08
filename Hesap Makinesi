@@ -1,0 +1,24 @@
+import javax.ws.rs.core.MediaType;
+import java.util.Scanner;
+import javax.ws.rs.*;
+
+
+@Path("/hesap")
+@ApplicationPath("/resources")
+public class HesapMakinesi {
+
+//http://localhost:8080/RestExample/resources/hesap/add/15/5
+	
+   @GET
+	 @Path("/add/{a}/{b}")
+	 @Produces(MediaType.APPLICATION_JSON)	 
+   public String add(@PathParam("a") int a,@PathParam("b") int b) { 
+		 int sayi1 = a;
+		 int sayi2 = b;		 
+     return "İlk sayi = " + sayi1 + "\n" + "İkinci sayi = " + sayi2 + "\n" + "Toplam = " + (sayi1+sayi2) 
+        		 + "Fark = " + (sayi1-sayi2) 
+        		 + "Carpim = " + (sayi1*sayi2) 
+        		 + "Bolum = " + (sayi1/sayi2) ;
+        		 
+     } 
+}
