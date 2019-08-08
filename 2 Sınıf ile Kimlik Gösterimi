@@ -1,0 +1,44 @@
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import de.dks.ws.RSOutputDTO;
+
+//1. SINIF 
+@Path("/examples")
+@ApplicationPath("/resources")
+public class RSWebServices {
+	//http://localhost:8080/RestExample/resources/examples/getUserInfo 
+	@GET
+	@Path("/getUserInfo")
+	@Produces(MediaType.APPLICATION_JSON)
+	public RSOutputDTO getUserInfo() {
+	RSOutputDTO out = new RSOutputDTO();
+	out.setUserAge(30);
+	out.setUserName("Kamil");
+	return out;
+	}
+}
+
+//2. SINIF 
+public class RSOutputDTO {
+
+	private String userName;
+	private int userAge;
+	public void setUserName(String userName) {
+	this.userName = userName;
+	}
+	public String getUserName() {
+	return userName;
+	}
+	public void setUserAge(int userAge) {
+	this.userAge = userAge;
+	}
+	public int getUserAge() {
+	return userAge;
+	}
+	}
+
+
+
