@@ -1,0 +1,15 @@
+//http://localhost:8080/RestExample/resources/MyRestService/orders/1 -> Adresi Girilicek
+
+	@GET
+	@Path("/orders/{id}")
+	public String getOrdersHistory(@PathParam("id") int id)
+	{
+		int kimlik = id; 		
+		String Dogum = "Dogum gunu: ";
+		String date = "1998.04.30";
+		String Ad = "Ad: ";
+		String Soyad = "Soyad: ";
+		String adOgren = "Eren";
+		String soyadOgren = "Yarar";	
+		return "Id:" + kimlik + "\n" + Ad + adOgren + "\n" + Soyad + soyadOgren + "\n" + Dogum + date ;		
+	}
