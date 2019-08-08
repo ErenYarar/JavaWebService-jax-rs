@@ -1,0 +1,47 @@
+import java.sql.*;
+
+public class DataBase_Baglantisi 
+{	
+	
+	public static void main(String[] args)
+	{
+		System.out.println("MySql Connect Example.");
+		Connection conn= null;
+		String url = "jdbc:mysql://localhost:3306/egitim?useUnicode=true&useLegacyDatetimeCode=false&serverTimezone=Turkey";
+		//String dbName = "egitim"; //Tablo adı girilicek
+		String driver = "com.mysql.cj.jdbc.Driver";
+		String userName = "root";
+		String password = "";  //Sifre girilicek
+		String f1,f2,f3;
+		try
+		{
+			Class.forName(driver).newInstance();
+			conn = DriverManager.getConnection(url,userName,password);
+			String query = "Select * FROM deneme";  //Sütun adı girilicek
+			System.out.println("Connected to the database");
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(query);
+		while(rs.next())
+		{
+			f1 = rs.getString(1);
+			f2 = rs.getString(2);
+			f3 = rs.getString(3);			
+			System.out.println(f1+" " +f2 + " " + f3 );			
+		}
+			conn.close();
+			System.out.println("Disconnected from database");				
+		}		
+		catch(ClassNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}	
+}
