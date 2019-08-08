@@ -1,0 +1,17 @@
+//http://localhost:8080/RestExample/resources/MyRestService/orders/1/Eren/Yarar/Bekar/Yazilim/21 -> Adrese Girilicek...
+
+	@GET
+	@Path("/orders/{id}/{ad}/{soyad}/{durum}/{bolum}/{yas}")
+	public String getOrdersHistory(@PathParam("id") int id,@PathParam("ad") String ad
+			,@PathParam("soyad") String soyad,@PathParam("durum") String durum
+			,@PathParam("bolum") String bolum,@PathParam("yas") int yas)
+	{
+		int Id = id; 		
+		String Ad = ad;
+		String Soyad = soyad;
+		String Durum = durum;
+		String Bolum = bolum;	
+		int Yas = yas;
+		return "Id: " + Id + "\n" +"Ad: " + Ad + "\n" + "Soyad: " + Soyad 
+				+ "\n" + "Durum: " + Durum + "\n" + "Bolum: " + Bolum + "\n" + "Yas: " + Yas;		
+	}
