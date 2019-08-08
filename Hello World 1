@@ -1,0 +1,23 @@
+import javax.ws.rs.core.Application;
+import javax.ws.rs.*;
+import javax.ws.rs.core.Response;
+//import javax.ws.rs.core.MediaType;
+
+@Path("/MyRestService")
+@ApplicationPath("/resources")
+public class RestServices extends Application{
+	//http://localhost:8080/RestExample/resources/MyRestService/sayHello -> Adresi Girilicek
+	@GET
+	@Path("/sayHello")
+	public String getHelloMsg() {
+		return "Hello World";
+	}
+  
+  //Mesaj yazımı için
+  //http://localhost:8080/RestExample/resources/MyRestService/message -> Adresi Girilicek
+	@GET
+	@Path("/message")
+	public String getMessage() {
+		String message = "Ana Sayfama hosgeldiniz";
+		return message;
+	}
