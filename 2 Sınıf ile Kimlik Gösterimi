@@ -4,7 +4,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import de.dks.ws.RSOutputDTO;
-
+      //de.dks.ws. -> Package ismi
+      //RSOutputDTO -> Diğer sınıfın adı
+      
 //1. SINIF 
 @Path("/examples")
 @ApplicationPath("/resources")
